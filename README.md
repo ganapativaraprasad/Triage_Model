@@ -67,5 +67,7 @@ This model should NOT be used in real-world medical decision-making without huma
 1. Install dependencies:
 ```bash
 pip install pandas scikit-learn
-2.Run the script
+
+2. Run the script:
+```bash
 python triage_model.py
