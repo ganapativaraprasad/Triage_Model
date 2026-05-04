@@ -72,3 +72,8 @@ pip install pandas scikit-learn
 ```bash
 python triage_model.py
 ```
+
+2. Run the script:
+```bash
+python triage_model.py
+```
