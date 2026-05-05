@@ -1,7 +1,7 @@
 # 🏥 Medical Triage System using NLP
 
 ## 📌 Overview
-This project is a simple NLP-based machine learning system that classifies patient symptom descriptions into appropriate medical departments:
+This project is an NLP-based machine learning system that classifies patient symptom descriptions into appropriate medical departments:
 - General
 - Cardiology
 - Neurology
@@ -10,27 +10,35 @@ This project is a simple NLP-based machine learning system that classifies patie
 ---
 
 ## 🎯 Objective
-To build a multi-class text classification model using TF-IDF and Logistic Regression that can assist in routing patients based on symptoms.
+To build a multi-class text classification model using TF-IDF and Logistic Regression to assist in routing patients based on symptoms.
 
 ---
 
 ## 🧠 Approach
 
-1. **Dataset Creation**
-   - Created a synthetic dataset of 200 samples
-   - Balanced across all classes
+1. **Dataset Usage**
+   - Used a real-world medical symptom dataset
+   - Symptoms were provided in binary (0/1) format across multiple columns
 
-2. **Text Processing**
-   - Converted text into numerical features using TF-IDF
+2. **Data Preprocessing**
+   - Converted binary symptom columns into readable text format
+   - Combined active symptoms into a single text representation
 
-3. **Model Training**
-   - Used Logistic Regression for classification
+3. **Label Mapping**
+   - Mapped diseases to departments (Cardiology, Neurology, Orthopaedics, General)
 
-4. **Evaluation**
-   - Evaluated using per-class F1-score
+4. **Feature Engineering**
+   - Used TF-IDF vectorization to convert text into numerical features
 
-5. **Error Analysis**
-   - Identified misclassifications and analyzed model weaknesses
+5. **Model Training**
+   - Trained a Logistic Regression classifier
+
+6. **Evaluation**
+   - Evaluated model using per-class Precision, Recall, and F1-score
+
+7. **Error Analysis**
+   - Identified high-confidence misclassifications
+   - Analyzed model limitations
 
 ---
 
@@ -44,36 +52,58 @@ To build a multi-class text classification model using TF-IDF and Logistic Regre
 ---
 
 ## 📊 Results
-- Achieved ~88% accuracy
-- Good performance across most classes
-- Some confusion in Neurology predictions
+- Achieved realistic performance on real dataset
+- Performance varies across departments
+- Some confusion in overlapping symptom cases (e.g., Neurology vs Cardiology)
+
+---
+
+## 📥 Dataset
+
+The dataset used in this project is **not included** in the repository due to GitHub file size limitations.
+
+👉 Download from Kaggle:
+Search: **"Disease Symptoms Dataset"**
+
+After downloading, place it in the project folder:
+
+Final_Augmented_dataset_Diseases_and_Symptoms.csv
 
 ---
 
 ## ⚠️ Limitations
-- Uses synthetic dataset (not real medical data)
-- Limited vocabulary
-- Cannot understand complex medical context
+- Disease-to-department mapping is rule-based
+- Model relies on keyword patterns
+- Limited understanding of complex medical context
 
 ---
 
 ## 🛑 Important Note
-This model should NOT be used in real-world medical decision-making without human supervision.
+This model should **NOT** be used for real-world medical decisions without human supervision.
 
 ---
 
 ## ▶️ How to Run
 
-1. Install dependencies:
-```bash
+### 1. Install dependencies
 pip install pandas scikit-learn
-```
-2. Run the script:
-```bash
-python triage_model.py
-```
 
-2. Run the script:
-```bash
+### 2. Place dataset in project folder
+
+### 3. Run the script
 python triage_model.py
-```
+
+---
+
+## 🧪 Sample Prediction
+
+Input:
+chest pain and difficulty breathing
+
+Output:
+Cardiology
+
+---
+
+## 📄 Author
+Prasad
